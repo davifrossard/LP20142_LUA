@@ -1,0 +1,40 @@
+Compra = {}
+Compra.__index = Compra -- Criar metatable de compras
+
+-- Função criadora da classe Compra
+function Compra.create(nF, forn, prod, quant)
+  local compra = {}             -- Novo objeto
+  setmetatable(compra,Compra)   -- Fazer objeto pertencer à metatable Compra
+
+	--Variáveis da classe
+  compra.numNotaFiscal = nF;
+  compra.data = os.date("%x")
+  compra.vendedor = forn;
+  compra.produto = prod;
+  compra.quantidade = quant;
+
+	--Validação dos dados  
+	if(getmetatable(compra.produto)~=Produto) then
+    error("\nErro na criação da compra de nota fiscal "..nF..": \nNão é um produto válido")
+  end
+  if(getmetatable(compra.vendedor)~=Fornecedor) then
+    error("\nErro na criação da compra de nota fiscal "..nF..": \nNão é um fornecedor válido")
+  end
+
+  return compra
+end
+
+-- Retorna o vendedor da compra
+function Compra:getVendedor()
+  return self.vendedor
+end
+
+-- Retorna o produto vendido
+function Compra:getProduto()
+  return self.produto
+end
+
+-- Retorna a quantidade de produtos comprados
+function Compra:getQuantidade()
+  return self.quantidade
+end

@@ -1,7 +1,7 @@
 Fornecedor = Pessoa.create() -- Fazer fornecedor herdar de Pessoa
 Fornecedor.__index = Fornecedor -- Criar metatable de Fornecedor
 
--- Função criadora da classe Fornecedor
+-- Função criadora da classe ClienteJuridico
 function Fornecedor.create(id, nome, endereco, telefone, cnpj, contato)
   local fornecedor = Pessoa.create(id, nome, endereco, telefone) -- Novo objeto da classe Pessoa
   setmetatable(fornecedor,Fornecedor)                            -- Fazer objeto pertencer à metatable Fornecedor

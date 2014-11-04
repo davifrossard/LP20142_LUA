@@ -1,7 +1,7 @@
 Cliente = Pessoa.create() -- Fazer cliente herdar de Pessoa
 Cliente.__index = Cliente -- Criar metatable de Cliente
 
--- Função criadora da classe Cliente
+-- Função criadora da classe
 function Cliente.create(id, nome, endereco, telefone)
   local cliente = Pessoa.create(id, nome, endereco, telefone) -- Novo objeto da classe Pessoa
   setmetatable(cliente,Cliente)                               -- Fazer objeto pertencer à metatable Cliente
