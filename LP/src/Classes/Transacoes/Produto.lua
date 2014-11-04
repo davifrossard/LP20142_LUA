@@ -21,34 +21,34 @@ function Produto:__tostring()
   end
 end
 
-function getCod()
+function Produto:getCod()
   return self.codigo;
 end
 
-function getCusto() 
+function Produto:getCusto() 
   return self.custo;
 end
 
-function getDescricao() 
+function Produto:getDescricao() 
   return self.descricao;
 end
 
-function getPercentualLucro() 
+function Produto:getPercentualLucro() 
   return self.percetualLucro;
 end
 
-function getPreco() 
-  return self.preco;
+function Produto:getPreco() 
+  return self.custo*;
 end
 
-function getVendidos() 
+function Produto:getVendidos() 
   return self.vendidos;
 end
 
-function setEstoqueAtual(var) 
+function Produto:setEstoqueAtual(var) 
   self.estoqueAtual = self.estoqueAtual + var;
 end
 
-function setVendidos(var) 
+function Produto:setVendidos(var) 
   self.vendidos = self.vendidos + var;
 end
