@@ -29,7 +29,7 @@ function Compra:getVendedor()
   return self.vendedor
 end
 
--- Retorna o produto comprado
+-- Retorna o produto vendido
 function Compra:getProduto()
   return self.produto
 end

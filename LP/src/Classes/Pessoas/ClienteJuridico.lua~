@@ -13,8 +13,6 @@ function ClienteJuridico.create(id, nome, endereco, telefone, cnpj, cadEst)
   return clienteJ
 end
 
--- Imprime objetos da classe cliente no formato:
--- *nome*;J;*cnpj*;*telefone*;*dataCadastro*;R$ *divida*
 function ClienteJuridico:__tostring()
   return self.nome .. ";J;" .. self.cnpj .. ";" .. self.telefone .. ";" .. self.dataCadastro .. ";R$ " .. string.format("%.2f",self.divida)
 end  
