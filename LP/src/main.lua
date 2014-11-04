@@ -1,4 +1,3 @@
-require "Classes.Pessoas.Pessoa"
 require "Classes.Pessoas.Cliente"
 require "Classes.Pessoas.ClienteFisico"
 require "Classes.Pessoas.ClienteJuridico"
