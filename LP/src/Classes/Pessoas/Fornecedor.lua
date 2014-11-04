@@ -1,16 +1,21 @@
-Cliente = Pessoa.create()
-Cliente.__index = Cliente
+Fornecedor = Pessoa.create()
+Fornecedor.__index = Fornecedor
 
-function Cliente.create(id, nome, endereco, telefone)
-  local cliente = Pessoa.create(id, nome, endereco, telefone) -- Novo objeto da classe Pessoa
-  setmetatable(cliente,Cliente)                               -- Fazer objeto pertencer à metatable Cliente
+function Fornecedor.create(id, nome, endereco, telefone, cnpj, contato)
+  local fornecedor = Pessoa.create(id, nome, endereco, telefone) -- Novo objeto da classe Pessoa
+  setmetatable(fornecedor,Fornecedor)                               -- Fazer objeto pertencer à metatable Fornecedor
   -- Variáveis da classe
-  cliente.dataCadastro = os.date("%x");
-  cliente.divida = 0;
-  return cliente
+  fornecedor.cnpj = cnpj
+  fornecedor.contato = contato
+  fornecedor.credito = 0
+  return fornecedor
 end
 
-function Cliente:__tostring()
-  return Pessoa.__tostring(self) .. "\nCadastrado em " .. self.dataCadastro .. "\nDivida de " .. self.divida
+function Fornecedor:__tostring()
+  return self.nome .. ";" .. self.cnpj .. ";" .. self.contato .. ";" .. self.telefone .. ";R$ " .. string.format("%.2f",self.credito)
+end
+
+function Fornecedor:setCredito(div)
+  self.credito = self.credito + div
 end
   

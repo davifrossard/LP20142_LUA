@@ -13,4 +13,7 @@ end
 function Cliente:__tostring()
   return Pessoa.__tostring(self) .. "\nCadastrado em " .. self.dataCadastro .. "\nDivida de " .. self.divida
 end
-  
+
+function Cliente:setDivida(div)
+  self.divida = self.divida + div
+end
