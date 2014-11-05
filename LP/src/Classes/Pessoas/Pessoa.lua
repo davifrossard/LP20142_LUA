@@ -20,6 +20,11 @@ function Pessoa:getCod()
   return self.codigoIdentificador
 end
 
+-- Retorna o nome da pessoa
+function Pessoa:getNome()
+	return self.nome
+end
+
 -- Função de impressão genérica da classe
 function Pessoa:__tostring()
   return self.codigoIdentificador .. ": " .. self.nome

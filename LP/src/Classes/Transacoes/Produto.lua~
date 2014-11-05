@@ -52,4 +52,5 @@ end
 
 function Produto:setVendidos(var) 
   self.vendidos = self.vendidos + var;
+	print(self.vendidos)
 end

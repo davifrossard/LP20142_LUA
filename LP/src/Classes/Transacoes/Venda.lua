@@ -14,8 +14,8 @@ function Venda.create(comprador, mP, quant, prod)
   venda.produto = prod;
 
 	--Validação dos dados  
-  if(getmetatable(venda.comprador)~=Comprador) then
-    error("\nErro na criação da venda do dia "..venda.data..": \nNão é um comprador válido")
+  if(getmetatable(venda.comprador)~=ClienteFisico and getmetatable(venda.comprador)~=ClienteJuridico) then
+    error("\nErro na criação da venda do dia "..venda.data..": \nNão é um cliente válido")
   end
   if(getmetatable(compra.produto)~=Produto) then
     error("\nErro na criação da venda do dia "..venda.data..": \nNão é um produto válido")
