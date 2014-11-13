@@ -3,7 +3,7 @@ ClienteJuridico.__index = ClienteJuridico -- Criar metatable de ClienteJuridico
 
 -- Função criadora da classe ClienteJuridico
 function ClienteJuridico.create(id, nome, endereco, telefone, dataCadastro, cnpj, cadEst)
-  local clienteJ = Cliente.create(id, nome, endereco, telefone, dataCadastro) -- Novo objeto da classe Pessoa
+  local clienteJ = Cliente.create(id, nome, endereco, telefone) -- Novo objeto da classe Pessoa
   setmetatable(clienteJ,ClienteJuridico)                        -- Fazer objeto pertencer à metatable Cliente
 
   -- Variáveis da classe

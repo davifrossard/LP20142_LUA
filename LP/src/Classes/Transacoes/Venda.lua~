@@ -2,12 +2,12 @@ Venda = {}
 Venda.__index = Venda -- Criar metatable de Vendas
 
 -- Função criadora da classe Venda
-function Venda.create(comprador, dataCompra, mP, quant, prod)
+function Venda.create(comprador, mP, quant, prod)
   local venda = {}            -- Novo objeto
   setmetatable(venda,Venda)   -- Fazer objeto pertencer à metatable Venda
 
 	--Variáveis da classe
-  venda.data = dataCompra;
+  venda.data = os.date("%x")
   venda.comprador = comprador;
   venda.meioPagamento = mP;
   venda.quantidade = quant;

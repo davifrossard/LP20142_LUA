@@ -26,7 +26,7 @@ function LerClientes (file)
 			cliente = ClienteFisico.create(t[1], t[2], t[3], t[4], t[5], t[7])
 			tableClientes[t[1]] = cliente
 	 	else
-			error("Cliente Inválido")
+			print("Cliente Inválido")
 		end
 	end
 

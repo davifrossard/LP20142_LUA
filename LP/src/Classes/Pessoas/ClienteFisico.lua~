@@ -2,8 +2,8 @@ ClienteFisico = Cliente.create() -- Fazer ClienteFisico herdar de Cliente
 ClienteFisico.__index = ClienteFisico -- Criar metatable de ClienteFisico
 
 -- Função criadora da classe ClienteFisico
-function ClienteFisico.create(id, nome, endereco, telefone, dataCadastro, cpf)
-  local clienteF = Cliente.create(id, nome, endereco, telefone, dataCadastro) -- Novo objeto da classe Pessoa
+function ClienteFisico.create(id, nome, endereco, telefone, cpf)
+  local clienteF = Cliente.create(id, nome, endereco, telefone) -- Novo objeto da classe Pessoa
   setmetatable(clienteF,ClienteFisico)                          -- Fazer objeto pertencer à metatable Cliente
 
   -- Variáveis da classe

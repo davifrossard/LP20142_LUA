@@ -2,13 +2,13 @@ Compra = {}
 Compra.__index = Compra -- Criar metatable de compras
 
 -- Função criadora da classe Compra
-function Compra.create(nF, forn, prod, dataCompra, quant)
+function Compra.create(nF, forn, prod, quant)
   local compra = {}             -- Novo objeto
   setmetatable(compra,Compra)   -- Fazer objeto pertencer à metatable Compra
 
 	--Variáveis da classe
   compra.numNotaFiscal = nF;
-  compra.data = dataCompra;
+  compra.data = os.date("%x")
   compra.vendedor = forn;
   compra.produto = prod;
   compra.quantidade = quant;
